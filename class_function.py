@@ -62,7 +62,7 @@ class EXP3:
 	# i find the action and i update its probability according to his loss
 	for i in range(0,n):
 		if self.actions[i]==action_taken:
-			self.x[i]=(self.x[i])*np.exp((-e*loss)/self.x[i])
+			self.x[i]=(self.x[i])*np.exp((-e*(loss+1))/self.x[i])
 	#now it remains to normalize the vector to have a probability distribution
 	s=np.sum(self.x)
 	self.x=self.x/s
